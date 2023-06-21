@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Life predicter</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+  </head>
+  <body class="flex">
+    <div class="main-title">life expectancy prediction model</div>
+    <main>
+      <form class="form" action="/result" method="POST">
+        <div class="page flex" id="page0">
+          <div class="field flex">
+            <label class="heading" for="Country">Country:</label>
+            <select id="Status" name="Status">
+              <option value="0">Afghanistan</option>
+              <option value="1">Albania</option>
+              <option value="2">Algeria</option>
+              <option value="3">Angola</option>
+              <option value="4">Antigua and Barbuda</option>
+              <option value="5">Argentina</option>
+              <option value="6">Armenia</option>
+              <option value="7">Australia</option>
+              <option value="8">Austria</option>
+              <option value="9">Azerbaijan</option>
+              <option value="10">Bahamas</option>
+              <option value="11">Bahrain</option>
+              <option value="12">Bangladesh</option>
+              <option value="13">Barbados</option>
+              <option value="14">Belarus</option>
+              <option value="15">Belgium</option>
+              <option value="16">Belize</option>
+              <option value="17">Benin</option>
+              <option value="18">Bhutan</option>
+              <option value="19">Bolivia</option>
+              <option value="20">Bosnia and Herzegovina</option>
+              <option value="21">Botswana</option>
+              <option value="22">Brazil</option>
+              <option value="23">Brunei Darussalam</option>
+              <option value="24">Bulgaria</option>
+              <option value="25">Burkina Faso</option>
+              <option value="26">Burundi</option>
+              <option value="27">CÃ`te d'Ivoire</option>
+              <option value="28">Cabo Verde</option>
+              <option value="29">Cambodia</option>
+              <option value="30">Cameroon</option>
+              <option value="31">Canada</option>
+              <option value="32">Central African Republic</option>
+              <option value="33">Chad</option>
+              <option value="34">Chile</option>
+              <option value="35">China</option>
+              <option value="36">Colombia</option>
+              <option value="37">Comoros</option>
+              <option value="38">Congo</option>
+              <option value="39">Costa Rica</option>
+              <option value="40">Croatia</option>
+              <option value="41">Cuba</option>
+              <option value="42">Cyprus</option>
+              <option value="43">Czechia</option>
+              <option value="44">Democratic People's Republic of Korea</option>
+              <option value="45">Denmark</option>
+              <option value="46">Djibouti</option>
+              <option value="47">Dominican Republic</option>
+              <option value="48">Ecuador</option>
+              <option value="49">Egypt</option>
+              <option value="50">El Salvador</option>
+              <option value="52">Equatorial Guinea</option>
+              <option value="53">Eritrea</option>
+              <option value="54">Estonia</option>
+              <option value="55">Ethiopia</option>
+              <option value="56">Fiji</option>
+              <option value="57">Finland</option>
+              <option value="58">France</option>
+              <option value="59">Gabon</option>
+              <option value="60">Gambia</option>
+              <option value="61">Georgia</option>
+              <option value="62">Germany</option>
+              <option value="63">Ghana</option>
+              <option value="64">Greece</option>
+              <option value="65">Grenada</option>
+              <option value="66">Guatemala</option>
+              <option value="67">Guinea</option>
+              <option value="68">Guinea-Bissau</option>
+              <option value="69">Guyana</option>
+              <option value="70">Haiti</option>
+              <option value="71">Honduras</option>
+              <option value="72">Hungary</option>
+              <option value="73">Iceland</option>
+              <option value="74">India</option>
+              <option value="75">Indonesia</option>
+              <option value="76">Iran</option>
+              <option value="77">Iraq</option>
+              <option value="78">Ireland</option>
+              <option value="79">Israel</option>
+              <option value="80">Italy</option>
+              <option value="81">Jamaica</option>
+              <option value="82">Japan</option>
+              <option value="83">Jordan</option>
+              <option value="84">Kazakhstan</option>
+              <option value="85">Kenya</option>
+              <option value="86">Kiribati</option>
+              <option value="87">Kuwait</option>
+              <option value="88">Kyrgyzstan</option>
+              <option value="89">Lao People's Democratic Republic</option>
+              <option value="90">Latvia</option>
+              <option value="91">Lebanon</option>
+              <option value="92">Lesotho</option>
+              <option value="93">Liberia</option>
+              <option value="94">Libya</option>
+              <option value="95">Lithuania</option>
+              <option value="96">Luxembourg</option>
+              <option value="97">Madagascar</option>
+              <option value="98">Malawi</option>
+              <option value="99">Malaysia</option>
+              <option value="100">Maldives</option>
+              <option value="101">Mali</option>
+              <option value="102">Malta</option>
+              <option value="103">Mauritania</option>
+              <option value="104">Mauritius</option>
+              <option value="105">Mexico</option>
+              <option value="106">Micronesia</option>
+              <option value="107">Monaco</option>
+              <option value="108">Mongolia</option>
+              <option value="109">Montenegro</option>
+              <option value="110">Morocco</option>
+              <option value="111">Mozambique</option>
+              <option value="112">Myanmar</option>
+              <option value="113">Namibia</option>
+              <option value="114">Nepal</option>
+              <option value="115">Netherlands</option>
+              <option value="116">New Zealand</option>
+              <option value="117">Nicaragua</option>
+              <option value="118">Niger</option>
+              <option value="119">Nigeria</option>
+              <option value="120">Norway</option>
+              <option value="121">Oman</option>
+              <option value="122">Pakistan</option>
+              <option value="123">Palau</option>
+              <option value="124">Panama</option>
+              <option value="125">Papua New Guinea</option>
+              <option value="126">Paraguay</option>
+              <option value="127">Peru</option>
+              <option value="128">Philippines</option>
+              <option value="129">Poland</option>
+              <option value="130">Portugal</option>
+              <option value="131">Qatar</option>
+              <option value="132">Republic of Korea</option>
+              <option value="133">Romania</option>
+              <option value="134">Russian Federation</option>
+              <option value="135">Rwanda</option>
+              <option value="136">Saint Lucia</option>
+              <option value="137">Saint Vincent and the Grenadines</option>
+              <option value="138">Samoa</option>
+              <option value="139">Sao Tome and Principe</option>
+              <option value="140">Saudi Arabia</option>
+              <option value="141">Senegal</option>
+              <option value="142">Serbia</option>
+              <option value="143">Seychelles</option>
+              <option value="144">Sierra Leone</option>
+              <option value="145">Singapore</option>
+              <option value="146">Slovakia</option>
+              <option value="147">Slovenia</option>
+              <option value="148">Solomon Islands</option>
+              <option value="149">Somalia</option>
+              <option value="150">South Africa</option>
+              <option value="151">South Sudan</option>
+              <option value="152">Spain</option>
+              <option value="153">Sri Lanka</option>
+              <option value="154">Sudan</option>
+              <option value="155">Suriname</option>
+              <option value="156">Swaziland</option>
+              <option value="157">Sweden</option>
+              <option value="158">Switzerland</option>
+              <option value="159">Syrian Arab Republic</option>
+              <option value="160">Tajikistan</option>
+              <option value="161">Thailand</option>
+              <option value="162">
+                The former Yugoslav republic of Macedonia
+              </option>
+              <option value="163">Timor-Leste</option>
+              <option value="164">Togo</option>
+              <option value="165">Tonga</option>
+              <option value="166">Trinidad and Tobago</option>
+              <option value="167">Tunisia</option>
+              <option value="168">Turkey</option>
+              <option value="169">Turkmenistan</option>
+              <option value="170">Tuvalu</option>
+              <option value="171">Uganda</option>
+              <option value="172">Ukraine</option>
+              <option value="173">United Arab Emirates</option>
+              <option value="174">
+                United Kingdom of Great Britain and Northern Ireland
+              </option>
+              <option value="175">United Republic of Tanzania</option>
+              <option value="176">United States of America</option>
+              <option value="177">Uruguay</option>
+              <option value="178">Uzbekistan</option>
+              <option value="179">Vanuatu</option>
+              <option value="180">Venezuela</option>
+              <option value="181">Viet Nam</option>
+              <option value="182">Yemen</option>
+              <option value="183">Zambia</option>
+              <option value="184">Zimbabwe</option>
+            </select>
+          </div>
+          <div class="field flex">
+            <label class="heading" for="Year">Year:</label>
+            <input required type="number" step="0.01" id="Year" name="Year" />
+          </div>
+          <div class="field flex">
+            <label class="heading" for="Status">Status:</label>
+            <select id="Status" name="Status">
+              <option value="0">Developing</option>
+              <option value="1">Developed</option>
+            </select>
+          </div>
+        </div>
+        <div class="page flex nopage" id="page1">
+          <div class="field flex">
+            <label class="heading" for="Adult Mortality"
+              >Adult Mortality (Probability of dying between 15 and 60 years per
+              1000 population):</label
+            >
+            <input
+              required
+              type="number"
+              step="0.01"
+              id="Adult Mortality"
+              name="Adult Mortality"
+            />
+          </div>
+          <div class="field flex">
+            <label class="heading" for="Infant Deaths"
+              >Infant Deaths (No. of Infant Deaths per 1000 population):</label
+            >
+            <input
+              required
+              type="number"
+              step="0.01"
+              id="Infant Deaths"
+              name="Infant Deaths"
+            />
+          </div>
+          <div class="field flex">
+            <label class="heading" for="Alcohol"
+              >Alcohol (recorded per capita (15+) consumption, in litres of pure
+              alcohol):</label
+            >
+            <input
+              required
+              type="number"
+              step="0.01"
+              id="Alcohol"
+              name="Alcohol"
+            />
+          </div>
+        </div>
+        <div class="page flex nopage" id="page2">
+          <div class="field flex">
+            <label class="heading" for="Percentage Expenditure"
+              >Percentage Expenditure (Expenditure on health as a percent of
+              Gross Domestic Product per capita):</label
+            >
+            <input
+              required
+              type="number"
+              step="0.01"
+              id="Percentage Expenditure"
+              name="Percentage Expenditure"
+            />
+          </div>
+          <div class="field flex">
+            <label class="heading" for="Hepatitis B"
+              >Hepatitis B (Immunization coverage among 1-year-olds %):</label
+            >
+            <input
+              required
+              type="number"
+              step="0.01"
+              id="Hepatitis B"
+              name="Hepatitis B"
+            />
+          </div>
+          <div class="field flex">
+            <label class="heading" for="Measles"
+              >Measles (No. of reported cases per 1000 population):</label
+            >
+            <input
+              required
+              type="number"
+              step="0.01"
+              id="Measles"
+              name="Measles"
+            />
+          </div>
+          <div class="field flex">
+            <label class="heading" for="BMI"
+              >BMI (Average Body Mass Index of entire population):</label
+            >
+            <input required type="number" step="0.01" id="BMI" name="BMI" />
+          </div>
+          <div class="field flex">
+            <label class="heading" for="Under-Five Deaths"
+              >Under-Five Deaths (No. of under-five deaths per 1000
+              population):</label
+            >
+            <input
+              required
+              type="number"
+              step="0.01"
+              id="Under-Five Deaths"
+              name="Under-Five Deaths"
+            />
+          </div>
+        </div>
+        <div class="page flex nopage" id="page3">
+          <div class="field flex">
+            <label class="heading" for="Polio"
+              >Polio (immunization coverage among 1-year-olds %):</label
+            >
+            <input required type="number" step="0.01" id="Polio" name="Polio" />
+          </div>
+          <div class="field flex">
+            <label class="heading" for="Total expenditure"
+              >Total expenditure (General government expenditure on health as a
+              percent of total government expenditure %):</label
+            >
+            <input
+              required
+              type="number"
+              step="0.01"
+              id="Total expenditure"
+              name="Total expenditure"
+            />
+          </div>
+          <div class="field flex">
+            <label class="heading" for="Diphtheria"
+              >Diphtheria (Immunization coverage among 1-year-olds %):</label
+            >
+            <input
+              required
+              type="number"
+              step="0.01"
+              id="Diphtheria"
+              name="Diphtheria"
+            />
+          </div>
+          <div class="field flex">
+            <label class="heading" for="HIV/AIDS"
+              >HIV/AIDS (Deaths per 1 000 live births HIV/AIDS, 0-4
+              years):</label
+            >
+            <input
+              required
+              type="number"
+              step="0.01"
+              id="HIV/AIDS"
+              name="HIV/AIDS"
+            />
+          </div>
+          <div class="field flex">
+            <label class="heading" for="GDP"
+              >GDP (Gross Domestic Product per capital, in USD):</label
+            >
+            <input required type="number" step="0.01" id="GDP" name="GDP" />
+          </div>
+        </div>
+        <div class="page flex nopage" id="page4">
+          <div class="field flex">
+            <label class="heading" for="Population">Population:</label>
+            <input
+              required
+              type="number"
+              step="0.01"
+              id="Population"
+              name="Population"
+            />
+          </div>
+          <div class="field flex">
+            <label class="heading" for="Thinness 1-19 years"
+              >Thinness 10-19 years (Prevalence of thinness among children and
+              adolescents for Age 10 to 19 %):</label
+            >
+            <input
+              required
+              type="number"
+              step="0.01"
+              id="Thinness 1-19 years"
+              name="Thinness 1-19 years"
+            />
+          </div>
+          <div class="field flex">
+            <label class="heading" for="Thinness 5-9 years"
+              >Thinness 5-9 years (Prevalence of thinness among children for Age
+              5 to 9 %):</label
+            >
+            <input
+              required
+              type="number"
+              step="0.01"
+              id="Thinness 5-9 years"
+              name="Thinness 5-9 years"
+            />
+          </div>
+          <div class="field flex">
+            <label class="heading" for="Income composition of resources"
+              >Income composition of resources:</label
+            >
+            <input
+              required
+              type="number"
+              step="0.01"
+              id="Income composition of resources"
+              name="Income composition of resources"
+            />
+          </div>
+          <div class="field flex">
+            <label class="heading" for="Schooling"
+              >Schooling (No. of years of Schooling):</label
+            >
+            <input
+              required
+              type="number"
+              step="0.01"
+              id="Schooling"
+              name="Schooling"
+            />
+          </div>
+        </div>
+        <div class="all-buttons flex">
+          <div class="buttons flex">
+            <div class="button" id="prevButton">prev</div>
+            <div class="button" id="nextButton">next</div>
+          </div>
+          <input class="button subButton" type="submit" value="Predict" />
+        </div>
+      </form>
+    </main>
+    <h1 class="result">{{ prediction }}</h1>
+  </body>
+  <script>
+    let pageNo = 0;
+
+    let page0 = document.getElementById("page0");
+    let page1 = document.getElementById("page1");
+    let page2 = document.getElementById("page2");
+    let page3 = document.getElementById("page3");
+    let page4 = document.getElementById("page4");
+
+    let nextButton = document.getElementById("nextButton");
+    let prevButton = document.getElementById("prevButton");
+    prevButton.classList.add("disable");
+
+    nextButton.addEventListener("click", () => {
+      ++pageNo;
+      chkDisable();
+      displayPage(pageNo);
+      console.log(pageNo);
+    });
+
+    prevButton.addEventListener("click", () => {
+      --pageNo;
+      chkDisable();
+      displayPage(pageNo);
+      console.log(pageNo);
+    });
+    const chkDisable = (page) => {
+      if (pageNo <= 0) {
+        prevButton.classList.add("disable");
+        nextButton.classList.remove("disable");
+      } else if (pageNo >= 4) {
+        nextButton.classList.add("disable");
+        prevButton.classList.remove("disable");
+      } else {
+        nextButton.classList.remove("disable");
+        prevButton.classList.remove("disable");
+      }
+    };
+    const displayPage = (page) => {
+      switch (page) {
+        case 0:
+          page0.classList.remove("nopage");
+          page1.classList.add("nopage");
+          page2.classList.add("nopage");
+          page3.classList.add("nopage");
+          page4.classList.add("nopage");
+          break;
+        case 1:
+          page0.classList.add("nopage");
+          page1.classList.remove("nopage");
+          page2.classList.add("nopage");
+          page3.classList.add("nopage");
+          page4.classList.add("nopage");
+          break;
+        case 2:
+          page0.classList.add("nopage");
+          page1.classList.add("nopage");
+          page2.classList.remove("nopage");
+          page3.classList.add("nopage");
+          page4.classList.add("nopage");
+          break;
+        case 3:
+          page0.classList.add("nopage");
+          page1.classList.add("nopage");
+          page2.classList.add("nopage");
+          page3.classList.remove("nopage");
+          page4.classList.add("nopage");
+          break;
+        case 4:
+          page0.classList.add("nopage");
+          page1.classList.add("nopage");
+          page2.classList.add("nopage");
+          page3.classList.add("nopage");
+          page4.classList.remove("nopage");
+          break;
+      }
+    };
+  </script>
+</html>
+<link rel="stylesheet" href="style.css">

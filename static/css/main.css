@@ -1,0 +1,204 @@
+:root {
+  --primary-color: #ff014f;
+  --secondary-color: #ecf0f3;
+  --secondary-color-b: #e4e4e4;
+  --primary-gradient: linear-gradient(145deg, #ff014f, #d11414);
+  --button-gradient: linear-gradient(145deg, #e2e8ec, #ffffff);
+
+  --text-c-link: #646c77;
+  --text-c-hover: #f8f9fa;
+  --light-text-c: #3c3e41;
+  --shadow: 5px 5px 15px #d1d9e6, -5px -5px 15px #ffffff;
+
+  --border-c: rgba(128, 128, 128, 0.5);
+
+  --ff: "Poppins", sans-serif;
+  --ff: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --transition: 0.2s;
+}
+:root {
+  --primary-color: #ff014f;
+  --secondary-color: #212428;
+  --secondary-color-b: #2e2e2e;
+  --primary-gradient: linear-gradient(145deg, #ff014f, #d11414);
+  --button-gradient: linear-gradient(145deg, #1e2024, #23272b);
+
+  --text-c-link: #96a3b6;
+  --text-c-hover: #f8f9fa;
+  --light-text-c: #e1e6ee;
+  --shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+
+  --border-c: rgba(128, 128, 128, 0.5);
+
+  --ff: "Poppins", sans-serif;
+  --ff: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --transition: 0.2s;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+::-webkit-scrollbar {
+  width: 7px;
+  background-color: var(--secondary-color);
+}
+::-webkit-scrollbar-thumb {
+  background-image: var(--primary-gradient);
+  border-radius: 100vw;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+::selection {
+  background-color: var(--primary-color);
+  color: var(--light-text-c);
+}
+body {
+  flex-direction: column;
+  padding: 1rem 0;
+  justify-content: center;
+  align-items: flex-start;
+  background: repeating-linear-gradient(
+      45deg,
+      var(--secondary-color-b) 0,
+      var(--secondary-color-b) 5%,
+      var(--secondary-color) 0,
+      var(--secondary-color) 50%
+    )
+    0 / 10px 10px;
+  scroll-behavior: smooth;
+}
+.main-title {
+  color: var(--light-text-c);
+  font-family: var(--ff);
+  font-size: 3rem;
+  position: relative;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+.heading {
+  width: calc(50vw + 10rem);
+  letter-spacing: 2px;
+  font-family: var(--ff);
+  color: var(--primary-color);
+}
+.nopage {
+  display: none;
+}
+.disable {
+  color: rgb(59, 59, 59) !important;
+  background-color: gray;
+  pointer-events: none;
+}
+.disable:focus {
+  outline: none;
+}
+.form .page {
+  flex-direction: column;
+}
+.form .page .field {
+  margin: 1rem;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+select,
+input {
+  color: var(--light-text-c);
+  z-index: 1;
+  width: calc(50vw + 10rem);
+  padding: 1rem 2rem;
+  margin: 0.4rem 0;
+  box-shadow: var(--shadow);
+  border: none;
+  background-image: var(--button-gradient);
+  border-radius: 5px;
+  font-family: var(--ff);
+  transition: var(--transition);
+}
+option {
+  background-color: var(--secondary-color);
+}
+button:focus,
+input:focus,
+select:focus,
+button:hover,
+select:hover,
+input:hover {
+  outline: 2px solid var(--primary-color);
+  border-radius: 5px;
+}
+.button {
+  margin: 1rem;
+  padding: 1rem 2rem;
+  font-family: var(--ff);
+  border-radius: 6px;
+  transition: var(--transition);
+  position: relative;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1.1rem;
+  border: none;
+}
+.button::after {
+  box-shadow: var(--shadow);
+  border-radius: 6px;
+  content: "";
+  position: absolute;
+  height: 100%;
+  background-image: var(--button-gradient);
+  width: 100%;
+  top: 0;
+  z-index: -2;
+  left: 0;
+}
+.button::before {
+  box-shadow: var(--shadow);
+  border-radius: 6px;
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: var(--primary-gradient);
+  top: 0;
+  opacity: 0;
+  left: 0;
+  transition: var(--transition);
+  z-index: -1;
+}
+.button:hover {
+  transform: translateY(-4px);
+  color: var(--text-c-hover);
+}
+.button:hover::before {
+  opacity: 1;
+}
+.all-buttons {
+  justify-content: space-between;
+}
+.subButton {
+  width: fit-content !important;
+}
+
+.result {
+  color: var(--light-text-c);
+  text-shadow: 0 0 10px var(--primary-color);
+  font-family: var(--ff);
+  font-size: 3rem;
+  position: relative;
+  margin: 2rem;
+  font-weight: 700;
+}
